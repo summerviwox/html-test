@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标题</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+<div class="contain" id="root">
+    <div class="div-head">
+        <div class="div-head-item handcurser"v-for="item in head.data">{{item.text}}</div>
+    </div>
+    <div class="div-mid-left">a</div>
+    <div class="div-mid-right">
+        <div class="div-mid-right-content">
+            <div class="div-mid-right-item" v-for="item in test.data">
+                <img class="div-mid-right-item-img" :src="item.netpath">
+                <div class="div-mid-right-item-des">{{item.name}}</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="div-foot">
+        <div class="div-foot-banquan">{{foot.data.text}}</div>
+    </div>
+</div>
+<script src="lib/axios.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

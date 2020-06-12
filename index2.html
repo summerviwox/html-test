@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标题</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+<div id="root" style="display: grid;height:100%;grid-template-columns: repeat(3,25%);grid-template-rows: repeat(3,25%);
+justify-items:center;justify-content: right;">
+    <div v-for="item in test.data" style="justify-self: stretch;grid-column: 3/4"><div>1</div></div>
+</div>
+<script src="lib/axios.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
