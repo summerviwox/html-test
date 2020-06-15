@@ -1,0 +1,25 @@
+.div-mid-right-content-search{
+ display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.div-mid-right-content-search-top{
+    display: flex;
+    flex-direction: row;
+
+
+}
+.div-mid-right-content-search-top-input{
+    padding: 4px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px cornflowerblue solid;
+}
+.div-mid-right-content-search-top-btn{
+    text-align: center;
+    padding: 6px 10px;
+    background: bisque;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 4px;
+    margin: 2px 4px;
+}

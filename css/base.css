@@ -11,3 +11,6 @@ body{
 .handcurser{
     cursor: pointer;
 }
+.div-fill{
+    flex: 1;
+}

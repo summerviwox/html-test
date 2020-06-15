@@ -5,28 +5,55 @@
     <title>标题</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/search.css">
     <script src="lib/vue.js"></script>
 </head>
 <body>
 <div class="contain" id="root">
     <div class="div-head">
-        <div class="div-head-item handcurser"v-for="item in head.data">{{item.text}}</div>
+        <div class="div-head-item handcurser"v-for="item in head.data" @click="mid.selected=item.position">{{item.text}}</div>
     </div>
     <div class="div-mid-left">a</div>
     <div class="div-mid-right">
-        <div class="div-mid-right-content">
-            <div class="div-mid-right-item" v-for="item in test.data">
+        <!--index-->
+        <div class="div-mid-right-content-index" v-if="mid.selected==0" v-cloak>index</div>
+        <!--picture-->
+        <div class="div-mid-right-content-picture" v-if="mid.selected==1" v-cloak>
+            <div v-cloak class="div-mid-right-item handcurser" v-for="item in mid.data" :key="item.id" @click="dialog.show=true">
                 <img class="div-mid-right-item-img" :src="item.netpath">
                 <div class="div-mid-right-item-des">{{item.name}}</div>
             </div>
+        </div >
+        <!--search-->
+        <div class="div-mid-right-content-search" v-if="mid.selected==2" v-cloak>
+            <div class="div-mid-right-content-search-top">
+                <input type="text" class="div-mid-right-content-search-top-input" v-model="mid.search.searchInput">
+                <div class="div-mid-right-content-search-top-btn">确定</div>
+            </div>
+
         </div>
+        <!--calendar-->
+        <div class="div-mid-right-content-calender" v-if="mid.selected==3" v-cloak>calendar</div>
+        <!--mine-->
+        <div class="div-mid-right-content-mine" v-if="mid.selected==4" v-cloak>mine</div>
 
     </div>
     <div class="div-foot">
         <div class="div-foot-banquan">{{foot.data.text}}</div>
     </div>
+    <div class="div-dialog" v-if="dialog.show" v-cloak>
+        <div class="div-dialog-bg"></div>
+        <div class="div-dialog-content" v-if="dialog.show">
+            <img class="div-dialog-img" :src="mid.imgurl">
+            <div class="div-dialog-btn-content" @click="dialog.show=false">
+                <div class="div-dialog-btn div-dialog-btn-left handcurser">确定</div>
+                <div class="div-dialog-btn div-dialog-btn-right handcurser">取消</div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="lib/axios.js"></script>
 <script src="js/index.js"></script>
+<script src="component/gridview.js"></script>
 </body>
 </html>
